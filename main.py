@@ -9,7 +9,7 @@ if response.status_code == 200:
     soup = BeautifulSoup(html, 'html.parser')
     ul = soup.select_one('ul.post-list')
     titles = ul.select('li > div > p > a')
-    with open("post", 'w') as f:
+    with open("post.txt", 'w') as f:
         for title in titles:
             f.write(title.get_text())
 else:
